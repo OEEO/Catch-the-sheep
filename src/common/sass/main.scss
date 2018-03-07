@@ -1,0 +1,57 @@
+$width: 550px;
+body{
+    font-size: 16px;
+    font-family: "Microsoft Yahei Font";
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    .info{
+        width: $width;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        color: red;
+        font-size: 24px;
+        font-weight: 600;
+        span:first-child{
+            margin-right: 50px;
+        }
+    }
+    .wrap{
+
+    }
+    .btns{
+        width: $width;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        .btn{
+            padding: 8px 10px;
+            outline: 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #eee;
+            background-color: #ee6655;
+            transition: all 0.25s;
+            &:hover{
+                cursor: pointer;
+                background-color: #ff8163;
+                color: #fff;
+            }
+        }
+    }
+    .instruction{
+        margin-top: 10px;
+        width: $width;
+        text-align: left;
+        padding: 10px;
+        line-height: 1.6;
+    }
+}

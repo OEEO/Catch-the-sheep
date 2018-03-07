@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>webpack</title>
+    <link rel="stylesheet" href="./static/css/reset.css">
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            <span class="foot">步数：</span>
+            <span class="time">时间：</span>
+        </div>
+        <div class="wrap" id="scene"></div>
+        <div class="btns">
+            <button id="btn-reset" class="btn">重新开始此关</button>
+            <button id="btn-backward" class="btn">后退一步</button>
+            <button id="btn-next" class="btn">下一关</button>
+        </div>
+        <div class="instruction">
+            <p>游戏说明：本游戏通过键盘的方向键操作，把羊全部捉到X地点即可获胜。</p>
+        </div>
+        <div class="tips" >
+            <p>恭喜通关!!!</p>
+            <div class="info">
+                <span class="foot">步数：</span>
+                <span class="time">时间：</span>
+            </div>
+        </div>
+    </div>
+    <script src="./dist/bundle.js"></script>
+    <script src="bundle.js"></script>
+</body>
+</html>
