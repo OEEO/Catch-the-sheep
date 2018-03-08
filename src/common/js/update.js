@@ -10,7 +10,6 @@ export function update(ctx, dir) {
     let savedWolf = ctx.curStatus.wolf;
     let detectCollisionWith = detectCollision.bind(ctx, ctx.curStatus.map);
     let firstDetect = detectCollisionWith(savedWolf.x, savedWolf.y, dir);
-    console.log(firstDetect.type);
     if (firstDetect.type === 2 || firstDetect.type === 4) {//下一步检测到地板或终点时
         move(savedWolf.object, ctx.item.base, dir);
         moveMap(ctx.status, ctx.curStatus.map, savedWolf, firstDetect.x, firstDetect.y);
@@ -33,8 +32,8 @@ export function update(ctx, dir) {
                 ctx.taskFinish = true;
                 clearInterval(ctx.timeCount);
                 setTimeout(() => {
-                    document.querySelector('.tips').style.top = '200px';
-                },500);
+                    document.querySelector('.tips').style.top = '175px';
+                },300);
             } else {
 
             }
