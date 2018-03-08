@@ -1,7 +1,5 @@
 /*jshint esversion: 6 */
-import { drawObj } from './drawObj.js';
-
-dsa,,,
+import { drawObject } from './drawObject.js';
 /**
  * 对象深拷贝
  * @param  {object} obj 原始对象
@@ -40,18 +38,19 @@ export async function render(container, status, item, sheepBeCatchObj) {
     canvas.height = 550;
     container.appendChild(canvas);
     let ctx = canvas.getContext('2d');
+    let wall, floor, target;
 
-    let wallImage = createImgPromise(item.wallImageUrl);
-    let floorImage = createImgPromise(item.floorImageUrl);
-    let targetImage = createImgPromise(item.targetImageUrl);
-    let sheepImage = createImgPromise(item.sheepImageUrl);
-    let wolfImage = createImgPromise(item.wolfImageUrl);
-    let sheepBeCatchImage = createImgPromise(item.sheepBeCatchImageUrl);
+    let wallImage = createImgPromise(item.wallImage);
+    let floorImage = createImgPromise(item.floorImage);
+    let targetImage = createImgPromise(item.targetImage);
+    let sheepImage = createImgPromise(item.sheepImage);
+    let wolfImage = createImgPromise(item.wolfImage);
+    let sheepBeCatchImage = createImgPromise(item.sheepBeCatchImage);
 
     function drawImage(image, x, y) {
         ctx.drawImage(image, item.base * x, item.base * y, item.base, item.base);
     }
-    Promise.all([wallImage, floorImage, targetImage, sheepImage, wolfImage, sheepBeCatchImage]).then((data) => {
+    return Promise.all([wallImage, floorImage, targetImage]).then((data) => {//这里好好想一下
         wall = data[0];
         floor = data[1];
         target = data[2];
@@ -59,8 +58,8 @@ export async function render(container, status, item, sheepBeCatchObj) {
         let map = cloneObj(status);
         let wolf = null;
 
-        status.forEach(function (rowArr, i) {
-            rowArr.forEach(function (num, j) {
+        status.forEach( (rowArr, i) => {
+            rowArr.forEach( (num, j) => {
                 switch(num) {
                     case 0:
                         //透明点位
@@ -70,21 +69,19 @@ export async function render(container, status, item, sheepBeCatchObj) {
                     case 1:
                         //墙
                         drawImage(wall, j, i);
-                        console.log('墙壁');
                         break;
                     case 2:
                         //地板
-                        console.log('地板');
                         drawImage(floor, j, i);
                         break;
                     case 3:
                         //羊
                         drawImage(floor, j, i);
-                        map[j][i] = {
+                        map[i][j] = {
                             name: 'sheep',
-                            row: i,
-                            col: j,
-                            object: drawObj(j, i, 'sheep', item.base, container)
+                            x: i,
+                            y: j,
+                            object: drawObject(j, i, 'sheep', item.base, container)
                         };
                         break;
                     case 4:
@@ -98,13 +95,13 @@ export async function render(container, status, item, sheepBeCatchObj) {
                         drawImage(floor, j, i);
                         map[i][j] = {
                             name: 'wolf',
-                            row: i,
-                            col: j,
-                            object: drawObj(j, i, 'sheep', item.base, container)
+                            x: i,
+                            y: j,
+                            object: drawObject(j, i, 'wolf', item.base, container)
                         };
                         wolf = {
-                            row: i,
-                            col: j,
+                            x: i,
+                            y: j,
                             object: map[i][j].object
                         };
                         break;

@@ -13,11 +13,11 @@ export function checkKeyCode(ctx, backward=false) {
         ENTER:13
     };
     if (ctx.check[kCode.SPACE]) {
-        rerender(this, this.curLevel);
+        rerender(ctx, ctx.curLevel);
         return;
     }
     if (ctx.check[kCode.ENTER]) {
-        rerender(this, this.curLevel + 1);
+        rerender(ctx, ctx.curLevel + 1);
         return;
     }
 

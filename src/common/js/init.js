@@ -1,8 +1,15 @@
-    let wall, floor, target;
-    let wallImageUrl = './static/img/wall.png';
-    let floorImageUrl = './static/img/floor.png';
-    let targetImageUrl = './static/img/target.png';
+/*jshint esversion: 6 */
+import { Scene } from './scene.js';
+import { bindEvent } from './bindEvent.js';
 
-    let sheepImageUrl = './static/img/sheep.png';
-    let wolfImageUrl = './static/img/wolf.png';
-    let sheepBeCatchImageUrl = './static/img/sheep-be-catch.png';
+export function init() {
+    let container = document.querySelector('.wrap');
+    new Scene(container, {
+        wallImage: './static/img/wall.png',
+        floorImage: './static/img/floor.png',
+        targetImage: './static/img/target.png',
+        sheepImage: './static/img/sheep.png',
+        wolfImage: './static/img/wolf.png',
+        sheepBeCatchImage: './static/img/sheep-be-catch.png'
+    });
+}
