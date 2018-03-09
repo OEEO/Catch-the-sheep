@@ -7,20 +7,21 @@
 <body>
     <div class="container clearfloat">
         <div class="wrap" id="scene"></div>
+        <div class="gameStartPage">
+            <button id="btn-gameStart">点击开始游戏</button>
+        </div>
         <div class="menu">
             <div class="btns">
                 <button id="btn-reset" class="btn">重新玩</button>
                 <button id="btn-next" class="btn">下一关</button>
             </div>
             <div class="info">
+                <span>第<span id="level">一</span>关</span>
                 <span>步数：<span id="foot">0</span></span>
                 <span>时间：<span id="time">0</span></span>
             </div>
-            <div class="instruction" style="display: none;">
-                <p>游戏说明：本游戏通过键盘的方向键操作，把羊全部捉到X地点即可获胜。</p>
-            </div>
         </div>
-        <div class="tips">
+        <div class="tips" style="display: none;">
             <p>恭喜你抓到了所有的羊!!!<br>
             按 Enter 键进入下一关<br>
             按空格键重玩此关</p>

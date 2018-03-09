@@ -32,7 +32,7 @@ export function update(ctx, dir) {
                 ctx.taskFinish = true;
                 clearInterval(ctx.timeCount);
                 setTimeout(() => {
-                    document.querySelector('.tips').style.top = '175px';
+                    document.querySelector('.tips').style.cssText = 'top:175px; display:flex;';
                 },300);
             } else {
 

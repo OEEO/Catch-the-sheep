@@ -2,12 +2,66 @@ body{
     font-size: 16px;
     font-family: "Microsoft Yahei Font";
 }
-
+@mixin btn{
+    margin-right: 20px;
+    padding: 8px 10px;
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fee;
+    background-color: #ee6655;
+    transition: all 0.25s;
+    &:hover{
+        cursor: pointer;
+        background-color: #ff8163;
+        color: #fff;
+    }
+}
 .container{
+    user-select: none;
     position: relative;
     width: 550px;
+    height: 600px;
     margin: 100px auto;
-    background-color: #93b901;
+    overflow: hidden;
+    background-color: #bbe20d;
+    .gameStartPage{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 550px;
+        height:600px;
+        color: #fff;
+        background-image: url('../../../static/img/gameStart.png');
+        background-size: 550px 600px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: all 0.2s;
+        @keyframes gameStartBtnMove{
+            0%{
+                transform: rotate(0);
+            }
+            25%{
+                transform: rotate(20deg);
+            }
+            50%{
+                transform: rotate(0);
+            }
+            75%{
+                transform: rotate(-20deg);
+            }
+            100%{
+                transform: rotate(0);
+            }
+        }
+        button{
+            @include btn;
+            margin-bottom: 120px;
+            animation: gameStartBtnMove 1.5s infinite;
+        }
+    }
     .wrap{
         position: relative;
     }
@@ -18,40 +72,28 @@ body{
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        .info{
-            margin-left: 20px;
-            text-align: left;
-            color: #fff;
-            font-size: 20px;
-            font-weight: 900;
-            >span{
-                display: inline-block;
-                width: 120px;
-            }
-        }
         .btns{
             margin-left: 20px;
             .btn{
-                margin-right: 20px;
-                padding: 8px 10px;
-                outline: 0;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                color: #fee;
-                background-color: #ee6655;
-                transition: all 0.25s;
-                &:hover{
-                    cursor: pointer;
-                    background-color: #ff8163;
-                    color: #fff;
-                }
+                @include btn;
             }
         }
-        .instruction{
-            width: 100px;
+        .info{
+            margin-left: 10px;
             text-align: left;
-            line-height: 1.6;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            >span{
+                width: 100px;
+                display: inline-block;
+            }
+            >span:first-child{
+                width: 70px;
+            }
+            >span:last-child{
+                width: 130px;
+            }
         }
     }
     .tips{
