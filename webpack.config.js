@@ -22,8 +22,8 @@ module.exports = {
             use: ['babel-loader'],
           },
           {
-              test:/\.(png)|(jpg)$/,
-              use: ['url-loader?limit=50000&name=[path][name].[ext]&outputPath=&publicPath=dist/']
+              test:/\.(png)|(jpg)|(jpeg)|(gif)$/,
+              use: ['url-loader?limit=8192&name=[path][name].[ext]&publicPath=dist/']
           }
         ]
     },

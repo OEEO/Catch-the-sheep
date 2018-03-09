@@ -13,6 +13,10 @@ export function init() {
             wolfImage: './static/img/wolf.png',
             sheepBeCatchImage: './static/img/sheep-be-catch.png'
         });
-        document.querySelector('.gameStartPage').style.top = '-100%';
+        let gameStartPage = document.querySelector('.gameStartPage');
+        gameStartPage.style.top = '-100%';
+        setTimeout(() => {
+            gameStartPage.style.display = 'none';
+        },250);
     });
 }
