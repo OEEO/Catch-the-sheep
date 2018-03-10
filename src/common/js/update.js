@@ -8,6 +8,20 @@ import { move, moveMap } from './move.js';
 
 export function update(ctx, dir) {
     let savedWolf = ctx.curStatus.wolf;
+    switch(dir) {
+        case 'left':
+            savedWolf.object.style.backgroundImage = `url(${ctx._wolfLeftImage})`;
+            break;
+        case 'right':
+            savedWolf.object.style.backgroundImage = `url(${ctx._wolfRightImage})`;
+            break;
+        case 'up':
+            savedWolf.object.style.backgroundImage = `url(${ctx._wolfUpImage})`;
+            break;
+        case 'down':
+            savedWolf.object.style.backgroundImage = `url(${ctx._wolfImage})`;
+            break;
+    }
     let detectCollisionWith = detectCollision.bind(ctx, ctx.curStatus.map);
     let firstDetect = detectCollisionWith(savedWolf.x, savedWolf.y, dir);
     if (firstDetect.type === 2 || firstDetect.type === 4) {//下一步检测到地板或终点时

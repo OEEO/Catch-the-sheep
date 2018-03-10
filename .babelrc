@@ -1,11 +1,7 @@
 {
-    "plugins": [
-        [
-            "transform-runtime",
-            {
-                "polyfill": false
-            }
-        ]
-
-    ],
+  "presets": [
+    ["latest", { "modules": false }]
+  ],
+  "plugins": ["transform-runtime"],
+  "comments": false
 }

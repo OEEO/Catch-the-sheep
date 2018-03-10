@@ -11,6 +11,9 @@ export function init() {
             targetImage: './static/img/target.png',
             sheepImage: './static/img/sheep.png',
             wolfImage: './static/img/wolf.png',
+            wolfLeftImage:'./static/img/wolf-left.png',
+            wolfRightImage:'./static/img/wolf-right.png',
+            wolfUpImage:'./static/img/wolf-up.png',
             sheepBeCatchImage: './static/img/sheep-be-catch.png'
         });
         let gameStartPage = document.querySelector('.gameStartPage');
