@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
 import { Scene } from './scene.js';
 import { bindEvent } from './bindEvent.js';
+import { bgImageChange } from './bgImageChange.js';
+
 
 export function init() {
     bindEvent('#btn-gameStart','click', () => {
@@ -22,4 +24,7 @@ export function init() {
             gameStartPage.style.display = 'none';
         },250);
     });
+    window.onload = function () {
+        bgImageChange('.gameStartPage', './static/img/gameStart.png');
+    };
 }
