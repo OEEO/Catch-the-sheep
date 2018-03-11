@@ -25,6 +25,6 @@ export function init() {
         },250);
     });
     window.onload = function () {
-        bgImageChange('.gameStartPage', './static/img/gameStart.png');
+        document.querySelector('#btn-gameStart').style.display = 'block';
     };
 }
