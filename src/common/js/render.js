@@ -45,6 +45,9 @@ export async function render(container, status, item, sheepBeCatchObj) {
     let targetImage = createImgPromise(item.targetImage);
     let sheepImage = createImgPromise(item.sheepImage);
     let wolfImage = createImgPromise(item.wolfImage);
+    let wolfLeftImage = createImgPromise(item.wolfLeftImage);
+    let wolfRightImage = createImgPromise(item.wolfRightImage);
+    let wolfUpImage = createImgPromise(item.wolfUpImage);
     let sheepBeCatchImage = createImgPromise(item.sheepBeCatchImage);
 
     function drawImage(image, x, y) {
