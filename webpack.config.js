@@ -20,10 +20,10 @@ module.exports = {
             }),
           },
           {
-            test: /\.scss$/,
+            test: /\.less$/,
             use: ExtractTextPlugin.extract({
                 fallback:'style-loader',
-                use:['css-loader?minimize&?sourceMap', 'postcss-loader?sourceMap' ,'sass-loader?sourceMap']
+                use:['css-loader?minimize&?sourceMap', 'postcss-loader?sourceMap' ,'less-loader?sourceMap']
             }),
           },
           {
